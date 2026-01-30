@@ -2,20 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* PRINT ONLY */
 @media print {
   body * {
     visibility: hidden;
   }
-  .print-only, .print-only * {
+
+  .print-only,
+  .print-only * {
     visibility: visible;
   }
+
   .print-only {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
   }
+
   @page {
-    margin: 0.5cm;
+    size: 80mm auto; /* CHANGE TO 58mm auto if needed */
+    margin: 0;
   }
+}
+
+/* POS RECEIPT */
+.pos-receipt {
+  width: 80mm; /* CHANGE TO 58mm IF USING 58MM PRINTER */
+  padding: 6mm;
+  font-family: monospace;
+  font-size: 12px;
+  color: #000;
+}
+
+.logo {
+  width: 40mm;
+  margin-bottom: 4mm;
+}
+
+.center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 2mm 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.small {
+  font-size: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed #000;
+  margin: 4mm 0;
 }
