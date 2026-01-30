@@ -27,30 +27,35 @@
 
 /* POS RECEIPT */
 .pos-receipt {
-  width: 58mm;          /* Fit 58mm thermal paper */
-  padding: 4mm 2mm;     /* Slightly reduced padding for perfect fit */
+  width: 54mm;                 /* REAL printable width (prevents right cut) */
+  padding: 4mm 1mm 4mm 2mm;    /* top | right | bottom | left */
   font-family: monospace;
-  font-size: 11px;      /* Slightly smaller for compactness */
+  font-size: 11px;
   color: #000;
-  text-align: center;   /* Center all text */
-  font-weight: bold;    /* Bold text for clarity */
-  line-height: 1.3;     /* Adjust spacing for readability */
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.3;
   word-wrap: break-word;
   overflow: hidden;
+  box-sizing: border-box;      /* CRITICAL for padding control */
 }
 
+/* LOGO */
 .logo {
-  width: 30mm;          /* Adjusted to fit 58mm width */
-  margin: 0 auto 4mm;   /* Center logo and add bottom margin */
+  width: 30mm;
+  margin: 0 auto 4mm;
   display: block;
 }
 
+/* ROWS (LABEL / VALUE) */
 .row {
   display: flex;
   justify-content: space-between;
   margin: 2mm 0;
+  font-size: 10px;             /* Prevents long text clipping */
 }
 
+/* TEXT HELPERS */
 .bold {
   font-weight: bold;
 }
@@ -59,6 +64,7 @@
   font-size: 10px;
 }
 
+/* SEPARATOR */
 hr {
   border: none;
   border-top: 1px dashed #000;
