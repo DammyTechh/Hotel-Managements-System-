@@ -20,27 +20,29 @@
   }
 
   @page {
-    size: 80mm auto; /* CHANGE TO 58mm auto if needed */
+    size: 58mm auto;
     margin: 0;
   }
 }
 
 /* POS RECEIPT */
 .pos-receipt {
-  width: 80mm; /* CHANGE TO 58mm IF USING 58MM PRINTER */
-  padding: 6mm;
+  width: 58mm;          /* Fit 58mm thermal paper */
+  padding: 4mm 2mm;     /* Slightly reduced padding for perfect fit */
   font-family: monospace;
-  font-size: 12px;
+  font-size: 11px;      /* Slightly smaller for compactness */
   color: #000;
+  text-align: center;   /* Center all text */
+  font-weight: bold;    /* Bold text for clarity */
+  line-height: 1.3;     /* Adjust spacing for readability */
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .logo {
-  width: 40mm;
-  margin-bottom: 4mm;
-}
-
-.center {
-  text-align: center;
+  width: 30mm;          /* Adjusted to fit 58mm width */
+  margin: 0 auto 4mm;   /* Center logo and add bottom margin */
+  display: block;
 }
 
 .row {
